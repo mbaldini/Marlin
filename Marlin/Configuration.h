@@ -12,7 +12,7 @@
 //#define MachineCRX
 //#define MachineCRXPro
 //#define MachineCR10Max
-//#define MachineEnder5Plus
+#define MachineEnder5Plus
 //#define MachineCR6
 //#define MachineCR6Max
 //#define MachineEnder6
@@ -67,7 +67,7 @@
    Creality Mounting assumes bolt-on kit
 */
 //#define HotendStock
-//#define HotendE3D
+#define HotendE3D
 //#define HotendMosquito
 
 //Enable this if you have an all metal hotend capable of 300c
@@ -88,21 +88,21 @@
  //#define BondtechBMG
  //#define BondtechLGX
  //#define E3DTitan
- //#define E3DHemera
+ #define E3DHemera
  //#define CrealityTitan
  //#define DDXExtruderKit
 
 //Stepper09Deg // 0.9 degree per step motor on the extruder - doubles ESteps
 
  //#define MicroswissDirectDrive
- //#define DirectDrive // Any direct drive extruder, reduces filament change lengths
+ #define DirectDrive // Any direct drive extruder, reduces filament change lengths
 
 /*
    Choose bed type below. If you have an extenrally controlled
    ac bed, leave both disabled
 */
 //#define BedAC
-//#define BedDC
+#define BedDC
 
 //#define SolidBedMounts //Removed a few LCD options to save some memory since not needed with solid mounts
 
@@ -232,7 +232,7 @@
    Standard is recommended in most other scenarios.
 */
 //#define MeshFast
-//#define MeshStd
+#define MeshStd
 //#define MeshFine
 //#define MeshExtreme
 
@@ -2178,7 +2178,7 @@
 #elif ANY(MachineCR10SPro, MachineCR10Max) && ENABLED(HotendStock) && DISABLED(MicroswissDirectDrive)
   #define NOZZLE_TO_PROBE_OFFSET { -27, 0, 0 }
 #elif (ANY(ABL_BLTOUCH, ABL_EZABL,ABL_NCSW) && ENABLED(E3DHemera))
-    #define NOZZLE_TO_PROBE_OFFSET { -40, 0, 0 }
+    #define NOZZLE_TO_PROBE_OFFSET { -3, -50, -4.2 }
 #elif ENABLED(MachineCR10SV2)
   #if ENABLED(ABL_BLTOUCH)
     #define NOZZLE_TO_PROBE_OFFSET { 45, 7, 0 }
@@ -2568,16 +2568,16 @@
     #define Y_MAX_POS 225
     #define ClipClearance 15
   #elif ENABLED(MachineEnder5Plus)
-    #define Y_BED_SIZE 360
+    #define Y_BED_SIZE 340
     #define Z_MAX_POS 400
     #if ENABLED(E3DHemera)
-      #define X_BED_SIZE 352
-      #define X_MAX_POS 352
+      #define X_BED_SIZE 330
+      #define X_MAX_POS 330
     #else
       #define X_BED_SIZE 360
       #define X_MAX_POS 360
     #endif
-    #define Y_MAX_POS 360
+    #define Y_MAX_POS 340
     #define ClipClearance 25
   #elif ENABLED(MachineEnder6)
     #define X_BED_SIZE 260
